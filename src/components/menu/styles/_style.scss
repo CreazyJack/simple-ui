@@ -1,0 +1,104 @@
+/*
+ * @Description: menu style
+ * @Date: 2021-04-30 16:56:30
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-08 12:52:59
+ */
+
+@import 'mixins';
+
+%menu-item-base {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+  height: 3rem;
+  cursor: pointer;
+  transition: $menu-transition;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.sp-menu {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  list-style: none;
+  user-select: none;
+  // horizontal
+  &.menu-horizontal {
+    @include menuStyle(row, bottom);
+    box-shadow: $menu-box-shadow;
+  }
+  // vertical
+  &.menu-vertical {
+    display: flex;
+    @include menuStyle(column, right);
+  }
+  // menu item
+  .sp-menu-item {
+    @extend %menu-item-base;
+    &.menu-item-disabled {
+      color: $menu-item-disabled-color;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+    &.menu-item-horizontal {
+      @include menuItemStyle(horizontal);
+    }
+    &.menu-item-vertical {
+      @include menuItemStyle(vertical);
+    }
+  }
+
+  .sp-sub-menu {
+    @extend %menu-item-base;
+    position: relative;
+    .sub-menu-title {
+      display: flex;
+      flex: 1;
+      line-height: 100%;
+      justify-content: center;
+      align-items: center;
+      font-size: $font-size-base;
+      .sub-menu-title-suffix {
+        margin-left: 0.3rem;
+        padding-top: 0.25rem;
+        .sub-menu-title-suffix-icon {
+          transition: 0.3s;
+        }
+      }
+    }
+    .sub-menu-ul {
+      @include subMenuUlStyle();
+      flex-direction: column;
+      &.sub-menu-horizontal {
+        @include subMenuUlStyle();
+      }
+      &.sub-menu-vertical {
+        @include subMenuUlStyle(vertical);
+      }
+      // subMenu li
+      .sp-menu-item {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        height: 2.5rem;
+        padding: 0.5rem 1rem;
+        border: 0;
+        color: $black;
+        transition: 0.3s;
+        &.menu-item-active {
+          color: $primary;
+          background-color: lighten($primary, 60);
+        }
+        &:hover {
+          border: 0;
+          color: $primary;
+        }
+      }
+    }
+  }
+}

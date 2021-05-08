@@ -1,0 +1,17 @@
+/*
+ * @Description: global styles entry
+ * @Date: 2021-04-27 16:15:28
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-08 12:47:19
+ */
+
+// 在 scss 文件名前面加 _，是为了告诉 sass 不要将其编译到 css 文件,但是在导入的时候，是不需要加 _ 的，也不需要后缀名
+@import 'variables';
+@import 'reboot'; // layout styles
+@import 'mixins';
+/* component */
+@import '../components/button/styles/style'; // button styles
+@import '../components/menu/styles/style'; // menu styles
+/* transition */
+@import '../transition/zoom/style';
+@import '../transition/rotate/style';

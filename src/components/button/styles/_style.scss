@@ -1,0 +1,55 @@
+/*
+ * @Description: button styles
+ * @Date: 2021-04-27 15:14:28
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-04 15:18:00
+ */
+
+@import 'mixins';
+
+.sp-btn {
+  @include buttonSize($btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
+  @include buttonStyle($body-color, $white, $border-color, $primary, $white, $primary);
+  position: relative;
+  display: inline-block;
+  line-height: $line-height-base;
+  vertical-align: middle;
+  text-align: center;
+  background-image: none;
+  font-weight: $btn-font-weight;
+  white-space: nowrap;
+  border-width: $btn-border-width;
+  border-style: solid;
+  box-shadow: $btn-box-shadow;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: $btn-transition;
+  &.btn-link {
+    @include buttonStyle($primary);
+    border: none;
+    box-shadow: none;
+  }
+  &.btn-primary {
+    @include buttonStyle($white, $primary, $primary);
+  }
+  &.btn-danger {
+    @include buttonStyle($white, $red, $red);
+  }
+  &.btn-small {
+    @include buttonSize(
+      $btn-padding-y-sm,
+      $btn-padding-x-sm,
+      $btn-font-size-sm,
+      $btn-border-radius-sm
+    );
+  }
+  &.btn-large {
+    @include buttonSize(
+      $btn-padding-y-lg,
+      $btn-padding-x-lg,
+      $btn-font-size-lg,
+      $btn-border-radius-lg
+    );
+  }
+}

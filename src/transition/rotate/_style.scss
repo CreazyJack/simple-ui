@@ -1,0 +1,25 @@
+/*
+ * @Description: rotate transition style
+ * @Date: 2021-05-08 12:36:41
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-08 12:42:14
+ */
+
+.rotate-transition-enter {
+  transform: rotate(0deg);
+}
+.rotate-transition-enter-active {
+  transform: rotate(180deg);
+}
+.rotate-transition-enter-done {
+  transform: rotate(180deg);
+}
+.rotate-transition-exit {
+  transform: rotate(180deg);
+}
+.rotate-transition-exit-active {
+  transform: rotate(0deg);
+}
+.rotate-transition-exit-done {
+  transform: rotate(0deg);
+}

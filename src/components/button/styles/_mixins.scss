@@ -1,0 +1,48 @@
+/*
+ * @Description: button mixins styles
+ * @Date: 2021-05-04 14:57:53
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-04 14:58:10
+ */
+
+// control different size button style
+@mixin buttonSize($paddingY, $paddingX, $fontSize, $borderRadius) {
+  padding: $paddingY $paddingX;
+  font-size: $fontSize;
+  border-radius: $borderRadius;
+}
+
+// control different type button style
+@mixin buttonStyle(
+  $color,
+  $bgColor: transparent,
+  $borderColor: transparent,
+  $hoverColor: $color,
+  $hoverBgc: lighten($bgColor, 8),
+  $hoverBorderColor: lighten($bgColor, 8)
+) {
+  color: $color;
+  background-color: $bgColor;
+  border-color: $borderColor;
+  &:hover {
+    color: $hoverColor;
+    background-color: $hoverBgc;
+    border-color: $hoverBorderColor;
+  }
+  &:active {
+    opacity: 0.8;
+  }
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    &:hover {
+      color: $color;
+      background-color: $bgColor;
+      border-color: $borderColor;
+    }
+    * {
+      pointer-events: none;
+    }
+  }
+}

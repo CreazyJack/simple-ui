@@ -1,0 +1,37 @@
+/*
+ * @Description: menu item style
+ * @Date: 2021-05-04 14:16:28
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-07 16:58:21
+ */
+
+@mixin menuStyle($direction: row, $borderPosition: bottom) {
+  flex-direction: $direction;
+  border-#{$borderPosition}: $menu-border-width solid $menu-border-color;
+}
+
+@mixin menuItemStyle($mode: horizontal) {
+  $borderPosition: if($mode == horizontal, bottom, left);
+  $paddingVertical: if($mode == horizontal, 0, 0.5rem);
+  flex: if($mode == horizontal, 0, 1);
+  padding: $paddingVertical $menu-item-padding-x;
+  align-items: if($mode == horizontal, center, flex-start);
+  border-#{$borderPosition}: $menu-item-active-border-width solid transparent;
+
+  &.menu-item-active,
+  &:focus,
+  &:hover {
+    color: $menu-item-active-color;
+    border-#{$borderPosition}: $menu-item-active-border-width solid $menu-item-active-color;
+  }
+}
+
+@mixin subMenuUlStyle($mode: horizontal) {
+  position: if($mode == horizontal, absolute, relative);
+  top: if($mode == horizontal, 48px, 0);
+  left: 0;
+  padding: 0;
+  margin: 0;
+  min-width: if($mode == horizontal, 120px, 0);
+  box-shadow: $submenu-box-shadow;
+}
