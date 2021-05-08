@@ -1,7 +1,28 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+/*
+ * @Description: 未添加描述
+ * @Date: 2021-05-08 15:56:47
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-08 18:06:28
+ */
 
-import { Button, ButtonProps } from './Button';
+import { Story, Meta } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import Button, { ButtonProps } from '../components/button/button';
+import '../styles/index.scss';
+import generateNode from './generateNode';
+
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+
+const Primary = generateNode(
+  {
+    type: 'primary',
+    children: 'Button',
+    onClick: action('onClick'),
+  },
+  Template,
+);
+
+export { Primary };
 
 export default {
   title: 'Example/Button',
@@ -10,28 +31,3 @@ export default {
     backgroundColor: { control: 'color' },
   },
 } as Meta;
-
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};

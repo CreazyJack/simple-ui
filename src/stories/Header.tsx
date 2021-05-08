@@ -1,10 +1,17 @@
-import React from 'react';
+/*
+ * @Description: 未添加描述
+ * @Date: 2021-05-08 15:35:54
+ * @LastEditors: JackyChou
+ * @LastEditTime: 2021-05-08 17:19:33
+ */
+import React, { ReactText } from 'react';
 
-import { Button } from './Button';
+// import { Button } from './Button';
+import Button from '../components/button/button';
 import './header.css';
 
 export interface HeaderProps {
-  user?: {};
+  user?: Record<ReactText, ReactText>;
   onLogin: () => void;
   onLogout: () => void;
   onCreateAccount: () => void;
@@ -34,11 +41,17 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogin, onLogout, onCreat
       </div>
       <div>
         {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
+          <Button size="small" onClick={onLogout}>
+            Log out
+          </Button>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button size="small" onClick={onLogin}>
+              Log in
+            </Button>
+            <Button type="primary" size="small" onClick={onCreateAccount}>
+              Sign up
+            </Button>
           </>
         )}
       </div>
