@@ -2,7 +2,7 @@
  * @Description: menu style
  * @Date: 2021-04-30 16:56:30
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-08 12:52:59
+ * @LastEditTime: 2021-05-10 14:39:09
  */
 
 @import 'mixins';
@@ -10,6 +10,7 @@
 %menu-item-base {
   display: flex;
   flex-direction: column;
+  margin: 0;
   justify-content: center;
   white-space: nowrap;
   height: 3rem;

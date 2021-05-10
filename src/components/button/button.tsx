@@ -2,10 +2,9 @@
  * @Description: button
  * @Date: 2021-04-27 17:54:20
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-06 15:16:09
+ * @LastEditTime: 2021-05-10 14:48:49
  */
 
-import { FC } from 'react';
 import useButton from './hooks/useButton';
 
 type ButtonType = 'default' | 'primary' | 'ghost' | 'dashed' | 'link' | 'text';
@@ -43,7 +42,7 @@ type BaseButtonProps = {
 
 export type ButtonProps = Partial<AnchorButtonProps & NativeButtonProps>;
 
-const Button: FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const { children, ...params } = useButton(props);
 
   if (!props.children) return null;
