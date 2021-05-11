@@ -2,7 +2,7 @@
  * @Description: button
  * @Date: 2021-04-27 17:54:20
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-10 14:48:49
+ * @LastEditTime: 2021-05-11 09:15:37
  */
 
 import useButton from './hooks/useButton';
@@ -44,7 +44,6 @@ export type ButtonProps = Partial<AnchorButtonProps & NativeButtonProps>;
 
 const Button: React.FC<ButtonProps> = (props) => {
   const { children, ...params } = useButton(props);
-
   if (!props.children) return null;
   if (props.type === 'link') return <a {...params}>{children}</a>;
   return <button {...params}>{children}</button>;

@@ -2,7 +2,7 @@
  * @Description: SubMenu
  * @Date: 2021-05-06 10:08:14
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-08 14:16:50
+ * @LastEditTime: 2021-05-11 09:17:08
  */
 
 import { CSSProperties, FC, FunctionComponentElement, ReactNode } from 'react';
@@ -25,7 +25,6 @@ export type SubMenuProps = {
 
 const SubMenu: FC<SubMenuProps> = (props) => {
   const { children, onUlHover, onTitleClick, boxClass, ulClass, visible } = useSubMenu(props);
-
   return (
     <li className={boxClass} {...onUlHover}>
       <div className="sub-menu-title" onClick={onTitleClick}>

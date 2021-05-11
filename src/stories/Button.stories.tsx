@@ -2,10 +2,10 @@
  * @Description: 未添加描述
  * @Date: 2021-05-08 15:56:47
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-10 17:32:24
+ * @LastEditTime: 2021-05-11 09:25:17
  */
 
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Button, { ButtonProps } from '../components/button/button';
@@ -20,7 +20,7 @@ Primary.args = {
   danger: false,
 };
 
-const 不同大小的按钮: React.FC = () => {
+const 不同大小的按钮: FC = () => {
   const [num, setNum] = useState(0);
   const add = () => setNum(num + 1);
   return (
