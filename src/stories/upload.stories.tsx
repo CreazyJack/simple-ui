@@ -2,18 +2,28 @@
  * @Description: upload story
  * @Date: 2021-05-11 14:13:09
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-11 15:59:59
+ * @LastEditTime: 2021-05-11 20:20:00
  */
 
+import { action } from '@storybook/addon-actions';
 import { Story, Meta } from '@storybook/react';
 import Upload, { UploadProps } from '../components/upload/upload';
 import '../styles/index.scss';
 
-const Template: Story<UploadProps> = (args) => <Upload {...args} />;
+const Template: Story<UploadProps> = (args) => <Upload {...args}>点击上传</Upload>;
 
 const DefaultUpload = Template.bind({});
 DefaultUpload.args = {
-  label: '点击上传',
+  action: 'https://jsonplaceholder.typicode.com/posts',
+  beforeUpload(file: File) {
+    // if (Math.round(file.size / 1024) > 50) return false;
+    // return true;
+    const newFile = new File([file], 'new_name.docx', { type: file.type });
+    return Promise.resolve(newFile);
+  },
+  onProgress: action('progress'),
+  onSuccess: action('success'),
+  onError: action('error'),
 };
 
 export { DefaultUpload };

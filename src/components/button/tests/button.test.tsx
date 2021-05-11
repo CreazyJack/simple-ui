@@ -2,7 +2,7 @@
  * @Description: button component test
  * @Date: 2021-04-29 17:20:06
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-07 15:13:01
+ * @LastEditTime: 2021-05-11 18:06:09
  */
 import { render, fireEvent } from '@testing-library/react';
 import Button, { ButtonProps } from '../button';

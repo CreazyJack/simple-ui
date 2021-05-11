@@ -2,7 +2,7 @@
  * @Description: SubMenu
  * @Date: 2021-05-06 10:08:14
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-11 09:17:08
+ * @LastEditTime: 2021-05-11 16:09:09
  */
 
 import { CSSProperties, FC, FunctionComponentElement, ReactNode } from 'react';
@@ -14,14 +14,14 @@ import RotateTransition from '../../transition/rotate';
 
 export type SubMenuChildrenType =
   | FunctionComponentElement<MenuItemProps>
-  | FunctionComponentElement<MenuItemProps>[];
+  | Array<FunctionComponentElement<MenuItemProps>>;
 
-export type SubMenuProps = {
+export interface SubMenuProps {
   className?: string;
   style?: CSSProperties;
   title: string;
   children?: ReactNode;
-};
+}
 
 const SubMenu: FC<SubMenuProps> = (props) => {
   const { children, onUlHover, onTitleClick, boxClass, ulClass, visible } = useSubMenu(props);

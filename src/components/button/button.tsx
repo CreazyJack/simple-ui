@@ -2,12 +2,12 @@
  * @Description: button
  * @Date: 2021-04-27 17:54:20
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-11 09:15:37
+ * @LastEditTime: 2021-05-11 16:30:48
  */
 
 import useButton from './hooks/useButton';
 
-type ButtonType = 'default' | 'primary' | 'ghost' | 'dashed' | 'link' | 'text';
+type ButtonType = 'default' | 'primary' | 'link';
 
 type ButtonShape = 'circle' | 'round';
 
@@ -28,7 +28,7 @@ type NativeButtonProps = {
 } & BaseButtonProps &
   Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'onClick'>;
 
-type BaseButtonProps = {
+interface BaseButtonProps {
   type?: ButtonType;
   icon?: React.ReactNode;
   shape?: ButtonShape;
@@ -38,7 +38,7 @@ type BaseButtonProps = {
   ghost?: boolean;
   danger?: boolean;
   block?: boolean;
-};
+}
 
 export type ButtonProps = Partial<AnchorButtonProps & NativeButtonProps>;
 
