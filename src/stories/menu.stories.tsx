@@ -25,10 +25,12 @@ Horizontal.args = {
 
 export { Horizontal };
 
-export default {
+const model: Meta = {
   title: 'Example/Menu',
   component: Menu,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta;
+};
+
+export default model;
