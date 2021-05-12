@@ -2,7 +2,7 @@
  * @Description: test menu
  * @Date: 2021-05-04 17:35:11
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-07 18:34:38
+ * @LastEditTime: 2021-05-12 17:05:04
  */
 
 import { render, fireEvent, waitFor } from '@testing-library/react';
@@ -86,11 +86,9 @@ const test = (props: MenuProps) => async () => {
   const disabledElement = wrapper.getByText('disabled');
   const onClickElement = wrapper.getByText('onClick');
   const subMenuElement = menuElement.getElementsByClassName('sp-sub-menu')[0];
-  const subMenuItemElement = wrapper.getByText('subMenuItem1');
   if (className === 'default') {
     // put most menuItem tests here
-    expect(menuElement.querySelectorAll(':scope>li').length).toEqual(5);
-    expect(menuElement.querySelectorAll(':scope li').length).toEqual(7);
+    expect(menuElement.querySelectorAll(':scope>li').length).toEqual(6);
     expect(activeElement).toHaveClass('menu-item-active');
     fireEvent.click(disabledElement);
     expect(disabledElement).toHaveClass('menu-item-disabled');
@@ -100,17 +98,18 @@ const test = (props: MenuProps) => async () => {
     expect(onClick).toHaveBeenCalledWith('onClick');
     expect(onSelect).toHaveBeenCalledWith('onClick');
     expect(onClickElement).toHaveClass('menu-item-active');
-    expect(subMenuItemElement).not.toBeVisible();
+    expect(subMenuElement.querySelector('ul')).toBeFalsy();
     fireEvent.mouseEnter(subMenuElement);
     await waitFor(() => {
-      expect(subMenuItemElement).toBeVisible();
+      expect(menuElement.querySelectorAll(':scope li').length).toEqual(8);
+      const subMenuItemElement = wrapper.getByText('subMenuItem1');
+      fireEvent.click(subMenuItemElement);
+      expect(onSelect).toHaveBeenCalledWith('subMenu-0');
     });
     fireEvent.mouseLeave(subMenuElement);
     await waitFor(() => {
-      expect(subMenuItemElement).not.toBeVisible();
+      expect(subMenuElement.querySelector('ul')).toBeFalsy();
     });
-    fireEvent.click(subMenuItemElement);
-    expect(onSelect).toHaveBeenCalledWith('subMenu-0');
   }
   if (className === 'controlled') {
     expect(activeElement).toHaveClass('menu-item-active');
@@ -119,15 +118,18 @@ const test = (props: MenuProps) => async () => {
     const subMenuTitleElement = wrapper.getByText('subMenu');
     fireEvent.click(subMenuTitleElement);
     await waitFor(() => {
-      expect(subMenuItemElement).toBeVisible();
+      const subMenuItemElement = wrapper.getByText('subMenuItem1');
+      expect(subMenuItemElement).toBeInTheDocument();
     });
     fireEvent.click(subMenuTitleElement);
     await waitFor(() => {
+      const subMenuItemElement = wrapper.getByText('subMenuItem1');
       expect(subMenuItemElement).not.toBeVisible();
     });
   }
   if (className === 'defaultOpenIndex') {
-    expect(subMenuItemElement).toBeVisible();
+    const subMenuItemElement = wrapper.getByText('subMenuItem1');
+    expect(subMenuItemElement).toBeInTheDocument();
   }
 };
 
