@@ -7,7 +7,7 @@
 
 import { Children, cloneElement, ReactNode, useContext, useState } from 'react';
 import classNames from 'classnames';
-import { SubMenuProps, SubMenuChildrenType } from '../subMenu';
+import { SubMenuProps, SubMenuChildrenType } from '../SubMenu';
 import MenuContext from './useMenuContext';
 
 const handleContent = (children?: ReactNode, title?: string) => {

@@ -12,7 +12,6 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-transition-group": "^4.4.1",
     "axios": "^0.21.1",
-    "node-sass": "^6.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
@@ -50,18 +49,8 @@
     "@storybook/node-logger": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
-    "f2elint": "^1.1.2"
-  },
-  "eslintConfig": {
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+    "f2elint": "^1.1.2",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.1.0"
   }
 }

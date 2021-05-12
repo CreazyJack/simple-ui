@@ -2,15 +2,15 @@
  * @Description: SubMenu
  * @Date: 2021-05-06 10:08:14
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-11 16:09:09
+ * @LastEditTime: 2021-05-12 10:10:27
  */
 
 import { CSSProperties, FC, FunctionComponentElement, ReactNode } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
+import { MenuItemProps } from './MenuItem';
+import ZoomTransition from '../transition/zoom';
+import RotateTransition from '../transition/rotate';
 import useSubMenu from './hooks/useSubMenu';
-import { MenuItemProps } from './menuItem';
-import ZoomTransition from '../../transition/zoom';
-import RotateTransition from '../../transition/rotate';
 
 export type SubMenuChildrenType =
   | FunctionComponentElement<MenuItemProps>

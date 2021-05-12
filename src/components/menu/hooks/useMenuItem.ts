@@ -7,7 +7,7 @@
 
 import { ReactNode, useContext } from 'react';
 import classNames from 'classnames';
-import { MenuItemProps } from '../menuItem';
+import { MenuItemProps } from '../MenuItem';
 import MenuContext from './useMenuContext';
 
 const handleContent = (children: ReactNode) => children;

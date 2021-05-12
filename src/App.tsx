@@ -5,9 +5,9 @@
  * @LastEditTime: 2021-05-08 14:14:57
  */
 import { FC } from 'react';
-import Menu from './components/menu/menu';
-import MenuItem from './components/menu/menuItem';
-import SubMenu from './components/menu/subMenu';
+import Menu from './components/Menu/Menu';
+import MenuItem from './components/Menu/MenuItem';
+import SubMenu from './components/Menu/SubMenu';
 import useInput from './hooks/useInput';
 
 const App: FC = () => {

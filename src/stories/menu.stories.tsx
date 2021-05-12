@@ -2,14 +2,14 @@
  * @Description: menu story
  * @Date: 2021-05-10 14:19:40
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-10 14:44:56
+ * @LastEditTime: 2021-05-12 14:38:39
  */
 
 import { Story, Meta } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Menu, { MenuProps } from '../components/menu/menu';
+import Menu, { MenuProps } from '../components/Menu/Menu';
+import SubMenu from '../components/Menu/SubMenu';
 import '../styles/index.scss';
-import SubMenu from '../components/menu/subMenu';
 
 const Template: Story<MenuProps> = (args) => <Menu {...args} />;
 

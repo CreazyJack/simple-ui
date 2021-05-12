@@ -6,9 +6,9 @@
  */
 
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import Menu, { MenuProps } from '../menu';
-import { MenuItemProps } from '../menuItem';
-import SubMenu from '../subMenu';
+import Menu, { MenuProps } from './Menu';
+import { MenuItemProps } from './MenuItem';
+import SubMenu from './SubMenu';
 
 const onSelect = jest.fn();
 const onClick = jest.fn();

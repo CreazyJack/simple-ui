@@ -2,12 +2,12 @@
  * @Description: button hook
  * @Date: 2021-04-27 20:19:01
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-06 14:46:25
+ * @LastEditTime: 2021-05-12 14:33:22
  */
 
 import { ReactNode } from 'react';
 import classNames from 'classnames';
-import { ButtonProps } from '../button';
+import { ButtonProps } from '../Button';
 
 const handleContent = (children?: ReactNode) => {
   if (children) return children;

@@ -7,8 +7,8 @@
 
 import { Children, cloneElement, FunctionComponentElement, ReactNode, useState } from 'react';
 import classNames from 'classnames';
-import { MenuChildrenType, MenuProps, SelectCallback } from '../menu';
-import { MenuItemProps } from '../menuItem';
+import { MenuChildrenType, MenuProps, SelectCallback } from '../Menu';
+import { MenuItemProps } from '../MenuItem';
 
 const handleContent = (children?: ReactNode) => {
   const nodes = Children.map(children as MenuChildrenType, (child, index) => {

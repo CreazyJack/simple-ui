@@ -2,10 +2,10 @@
  * @Description: button component test
  * @Date: 2021-04-29 17:20:06
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-11 18:06:09
+ * @LastEditTime: 2021-05-12 16:20:10
  */
 import { render, fireEvent } from '@testing-library/react';
-import Button, { ButtonProps } from '../button';
+import Button, { ButtonProps } from './Button';
 
 const defaultProps: ButtonProps = { type: 'default', shape: 'round', size: 'middle' };
 

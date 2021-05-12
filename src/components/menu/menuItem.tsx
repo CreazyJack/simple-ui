@@ -6,8 +6,8 @@
  */
 
 import { CSSProperties, FC, ReactNode } from 'react';
+import { SelectCallback } from './Menu';
 import useMenuItem from './hooks/useMenuItem';
-import { SelectCallback } from './menu';
 
 export interface MenuItemProps {
   className?: string;

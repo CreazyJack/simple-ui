@@ -6,7 +6,7 @@
  */
 
 import { createContext } from 'react';
-import { SelectCallback, MenuMode } from '../menu';
+import { SelectCallback, MenuMode } from '../Menu';
 
 interface MenuContextProps {
   mode?: MenuMode;
