@@ -10,10 +10,10 @@
     "ui",
     "react"
   ],
-  "homepage": "https://code.aliyun.com/JackyChou/simple-ui",
+  "homepage": "https://github.com/CreazyJack/simple-ui",
   "repository": {
     "type": "git",
-    "url": "https://code.aliyun.com/JackyChou/simple-ui"
+    "url": "https://github.com/CreazyJack/simple-ui"
   },
   "files": [
     "dist"
