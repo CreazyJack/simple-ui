@@ -1,6 +1,6 @@
 {
   "name": "for_testing_my_react_ts_ui_component_jacky_chou",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "React components library",
   "author": "jackychou",
   "private": false,
@@ -48,6 +48,7 @@
     "@types/react-transition-group": "^4.4.1",
     "cross-env": "^7.0.3",
     "f2elint": "^1.1.2",
+    "jest": "^26.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",

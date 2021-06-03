@@ -2,7 +2,7 @@
  * @Description: debounce hook
  * @Date: 2021-05-10 16:42:45
  * @LastEditors: JackyChou
- * @LastEditTime: 2021-05-10 21:02:48
+ * @LastEditTime: 2021-06-03 16:29:21
  */
 
 import { useCallback, useEffect, useRef } from 'react';
@@ -23,7 +23,7 @@ const useDebounce: UseDebounceType = (fn, delay = 300) => {
 
   useEffect(() => {
     current.fn = fn;
-  }, [fn, delay, current]);
+  }, [fn, current]);
 
   return debounce;
 };
